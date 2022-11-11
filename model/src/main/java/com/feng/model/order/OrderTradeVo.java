@@ -1,6 +1,6 @@
 package com.feng.model.order;
 
-import com.atguigu.gmall.model.activity.CouponInfo;
+import com.feng.model.activity.CouponInfo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

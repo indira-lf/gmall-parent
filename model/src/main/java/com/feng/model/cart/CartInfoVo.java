@@ -1,6 +1,6 @@
 package com.feng.model.cart;
 
-import com.atguigu.gmall.model.activity.ActivityRule;
+import com.feng.model.activity.ActivityRule;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

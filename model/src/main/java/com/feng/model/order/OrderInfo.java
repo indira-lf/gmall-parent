@@ -1,13 +1,13 @@
 package com.feng.model.order;
 
-import com.atguigu.gmall.model.activity.ActivityRule;
-import com.atguigu.gmall.model.activity.CouponInfo;
-import com.atguigu.gmall.model.base.BaseEntity;
-import com.atguigu.gmall.model.enums.ActivityType;
-import com.atguigu.gmall.model.enums.CouponType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.feng.model.activity.ActivityRule;
+import com.feng.model.activity.CouponInfo;
+import com.feng.model.base.BaseEntity;
+import com.feng.model.enums.ActivityType;
+import com.feng.model.enums.CouponType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

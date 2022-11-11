@@ -1,6 +1,6 @@
 package com.feng.model.activity;
 
-import com.atguigu.gmall.model.enums.CouponRangeType;
+import com.feng.model.enums.CouponRangeType;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
