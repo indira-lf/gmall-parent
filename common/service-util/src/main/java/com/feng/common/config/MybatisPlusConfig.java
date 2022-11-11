@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan({"com.feng.gmall.*.mapper","com.feng.gmall.mapper"})
+@MapperScan("com.feng.gmall.mapper") //com.feng.gmall.*.mapper
 public class MybatisPlusConfig {
 
     /**
