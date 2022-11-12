@@ -7,10 +7,7 @@ import com.feng.model.product.BaseCategory2;
 import com.feng.model.product.BaseCategory3;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +28,7 @@ public class CategoryController {
      * 获取一级分类数据
      * @return
      */
+    @CrossOrigin
     @GetMapping("/getCategory1")
     public Result getCategory1(){
 
@@ -42,6 +40,7 @@ public class CategoryController {
      * 获取二级分类数据
      * @return
      */
+    @CrossOrigin
     @GetMapping("/getCategory2/{category1Id}")
     public Result getCategory2(@PathVariable("category1Id") Long category1Id){
 
@@ -54,6 +53,7 @@ public class CategoryController {
      * 获取二级分类数据
      * @return
      */
+    @CrossOrigin
     @GetMapping("/getCategory3/{category2Id}")
     public Result getCategory3(@PathVariable("category2Id") Long category2Id){
 
