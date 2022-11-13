@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--
+ namespace:接口的全限定类名
+-->
+<mapper namespace="com.feng.gmall.mapper.SpuInfoMapper">
+
+    <!--结果集处理
+    autoMapping="true":实现自动映射
+    column：返回数据字段名
+    property：实体类属性名
+
+    -->
+    <resultMap id="spuInfoMap" type="com.feng.model.product.SpuInfo" autoMapping="true">
+        <id column="id" property="id"></id>
+        <!--
+        property: 实体类属性名
+        ofType: 实体类属性名对应的类型
+        -->
+        <collection property="spuImageList" ofType="com.feng.model.product.SpuImage" autoMapping="true">
+            <id column="img_id" property="id"></id>
+        </collection>
+        <collection property="spuPosterList" ofType="com.feng.model.product.SpuPoster" autoMapping="true">
+            <id column="post_id" property="id"></id>
+        </collection>
+        <collection property="spuSaleAttrList" ofType="com.feng.model.product.SpuSaleAttr" autoMapping="true">
+            <id column="sale_id" property="id"></id>
+        </collection>
+
+
+    </resultMap>
+
+    <!--根据分类id查询平台属性集合-->
+    <select id="findSpuInfoByKeyword" resultMap="spuInfoMap" >
+        select inf.id,
+               inf.spu_name,
+               inf.description,
+               inf.tm_id,
+               inf.category3_id,
+               inf.create_time,
+               inf.update_time,
+               img.id img_id,
+               img.img_name,
+               img.img_url,
+               img.spu_id,
+               post.img_name,
+               post.img_url,
+               post.spu_id,
+               sale.id sale_id,
+               sale.spu_id,
+               sale.base_sale_attr_id,
+               sale.sale_attr_name
+        from spu_info inf
+                 join spu_image img on inf.id = img.spu_id
+                 join spu_poster post on inf.id = post.spu_id
+                 join spu_sale_attr sale on inf.id = sale.spu_id
+        where inf.description like "%" #{keyword,jdbcType=VARCHAR} "%" or inf.spu_name like "%" #{keyword,jdbcType=VARCHAR} "%";
+    </select>
+
+
+</mapper>
