@@ -1,9 +1,9 @@
 package com.feng.gmall.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.feng.gmall.mapper.BaseCategory1Mapper;
-import com.feng.gmall.mapper.BaseCategory2Mapper;
-import com.feng.gmall.mapper.BaseCategory3Mapper;
+import com.feng.gmall.dao.BaseCategory1Dao;
+import com.feng.gmall.dao.BaseCategory2Dao;
+import com.feng.gmall.dao.BaseCategory3Dao;
 import com.feng.gmall.service.CategoryService;
 import com.feng.model.product.BaseCategory1;
 import com.feng.model.product.BaseCategory2;
@@ -24,13 +24,13 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
-    BaseCategory1Mapper category1Mapper;
+    BaseCategory1Dao category1Dao;
 
     @Autowired
-    BaseCategory2Mapper category2Mapper;
+    BaseCategory2Dao category2Dao;
 
     @Autowired
-    BaseCategory3Mapper category3Mapper;
+    BaseCategory3Dao category3Dao;
 
     /**
      * 一级分类数据
@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
      */
     @Override
     public List<BaseCategory1> getCategory1() {
-        return category1Mapper.selectList(null);
+        return category1Dao.selectList(null);
     }
 
     /**
@@ -51,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService {
         QueryWrapper<BaseCategory2> wrapper = new QueryWrapper<>();
         wrapper.eq("category1_id", category1Id);
 
-        List<BaseCategory2> category2s = category2Mapper.selectList(wrapper);
+        List<BaseCategory2> category2s = category2Dao.selectList(wrapper);
         return category2s;
     }
 
@@ -60,7 +60,7 @@ public class CategoryServiceImpl implements CategoryService {
         QueryWrapper<BaseCategory3> wrapper = new QueryWrapper<>();
         wrapper.eq("category2_id", category2Id);
 
-        List<BaseCategory3> category3s = category3Mapper.selectList(wrapper);
+        List<BaseCategory3> category3s = category3Dao.selectList(wrapper);
         return category3s;
     }
 }

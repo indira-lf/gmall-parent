@@ -19,5 +19,6 @@ public interface CategoryService {
     /**二级分类数据*/
     List<BaseCategory2> getCategory2(Long category1Id);
 
+    /**三级分类数据*/
     List<BaseCategory3> getCategory3(Long category2Id);
 }

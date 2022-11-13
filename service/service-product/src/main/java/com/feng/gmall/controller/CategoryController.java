@@ -48,7 +48,7 @@ public class CategoryController {
     }
 
     /**
-     * 获取二级分类数据
+     * 获取三级分类数据
      * @return
      */
     @GetMapping("/getCategory3/{category2Id}")
