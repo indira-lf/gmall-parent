@@ -28,7 +28,6 @@ public class CategoryController {
      * 获取一级分类数据
      * @return
      */
-    @CrossOrigin
     @GetMapping("/getCategory1")
     public Result getCategory1(){
 
@@ -40,7 +39,6 @@ public class CategoryController {
      * 获取二级分类数据
      * @return
      */
-    @CrossOrigin
     @GetMapping("/getCategory2/{category1Id}")
     public Result getCategory2(@PathVariable("category1Id") Long category1Id){
 
@@ -53,7 +51,6 @@ public class CategoryController {
      * 获取二级分类数据
      * @return
      */
-    @CrossOrigin
     @GetMapping("/getCategory3/{category2Id}")
     public Result getCategory3(@PathVariable("category2Id") Long category2Id){
 
